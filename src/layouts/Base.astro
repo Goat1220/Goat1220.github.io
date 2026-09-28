@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { CATEGORIES, CATEGORY_KEYS } from '../categories';
 
 interface Props {
   title?: string;
@@ -35,7 +36,10 @@ const path = Astro.url.pathname;
       <div class="wrap">
         <a class="logo" href="/"><img src="/icon.png" alt="" />{siteTitle}</a>
         <nav class="site-nav">
-          <a href="/" aria-current={path === '/' ? 'page' : undefined}>글</a>
+          <a href="/" aria-current={path === '/' ? 'page' : undefined}>전체</a>
+          {CATEGORY_KEYS.map((key) => (
+            <a href={`/category/${key}/`} aria-current={path.startsWith(`/category/${key}`) ? 'page' : undefined}>{CATEGORIES[key].name}</a>
+          ))}
           <a href="/about/" aria-current={path.startsWith('/about') ? 'page' : undefined}>소개</a>
         </nav>
       </div>

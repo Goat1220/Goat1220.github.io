@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import { CATEGORIES, CATEGORY_KEYS, type CategoryKey } from '../../categories';
+import { getPosts } from '../../posts';
+
+export function getStaticPaths() {
+  return CATEGORY_KEYS.map((category) => ({ params: { category } }));
+}
+
+const category = Astro.params.category as CategoryKey;
+const { name, description } = CATEGORIES[category];
+const posts = (await getPosts()).filter((post) => post.data.category === category);
+---
+
+<Base title={name} description={description}>
+  <section class="hero">
+    <h1>{name}</h1>
+    <p>{description}</p>
+  </section>
+
+  <PostList posts={posts} showCategory={false} />
+</Base>

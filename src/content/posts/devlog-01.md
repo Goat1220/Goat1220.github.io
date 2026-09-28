@@ -2,6 +2,7 @@
 title: "[DungeonRace 개발일지 #1] 기획서를 직접 구현해 보니 보인 것들"
 description: "기획서에서는 그럴듯했던 규칙이 실제로 움직여 보면 어색하거나, 숫자가 맞지 않거나, 빠진 부분이 드러납니다. 첫 일주일 동안 발견한 네 가지."
 date: 2026-09-28
+category: gamedev
 tags: ["DungeonRace", "기획"]
 image: /posts/devlog-01/cover.png
 draft: false

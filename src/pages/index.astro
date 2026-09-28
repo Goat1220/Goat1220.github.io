@@ -1,32 +1,16 @@
 ---
-import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import PostList from '../components/PostList.astro';
+import { getPosts } from '../posts';
 
-const posts = (await getCollection('posts', ({ data }) => import.meta.env.DEV || !data.draft))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-const fmt = (d: Date) => d.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
+const posts = await getPosts();
 ---
 
 <Base>
   <section class="hero">
     <h1>기획자의 개발일지</h1>
-    <p>게임 기획자가 직접 게임을 만들며, 기획서가 구현을 만나 달라지는 과정을 기록합니다.</p>
+    <p>게임 기획자가 직접 게임을 만들며 남기는 개발 기록, 코딩 공부, 그리고 일상.</p>
   </section>
 
-  <ul class="post-list">
-    {posts.map((post) => (
-      <li>
-        <a class="post-card" href={`/posts/${post.id}/`}>
-          <div class="meta">
-            <time datetime={post.data.date.toISOString()}>{fmt(post.data.date)}</time>
-            {post.data.draft && <span class="draft-badge">초안</span>}
-            {post.data.tags.map((t) => <span class="tag">{t}</span>)}
-          </div>
-          <h2>{post.data.title}</h2>
-          <p>{post.data.description}</p>
-        </a>
-      </li>
-    ))}
-  </ul>
-  {posts.length === 0 && <p>아직 글이 없습니다. 곧 첫 글이 올라옵니다.</p>}
+  <PostList posts={posts} />
 </Base>

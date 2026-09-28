@@ -47,7 +47,7 @@ a { color: var(--accent); text-underline-offset: 3px; }
 
 /* Header */
 .site-header { border-bottom: 2px solid var(--line); background: var(--surface); }
-.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; flex-wrap: wrap; }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 6px 16px; min-height: 64px; flex-wrap: wrap; padding-top: 10px; padding-bottom: 10px; }
 .logo { font-family: var(--pixel); font-size: 20px; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 10px; }
 .logo img { width: 32px; height: 32px; image-rendering: pixelated; }
 .site-nav { display: flex; gap: 18px; font-family: var(--pixel); font-size: 15px; }
@@ -70,6 +70,8 @@ main { padding: 40px 0 72px; }
 .post-card p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
 .meta { font-size: 14px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 .tag { font-family: var(--pixel); font-size: 12px; color: var(--accent); background: var(--accent-soft); padding: 1px 8px; border-radius: 2px; }
+.category { font-family: var(--pixel); font-size: 12px; color: var(--surface); background: var(--accent); padding: 1px 8px; border-radius: 2px; text-decoration: none; }
+.empty { color: var(--muted); padding: 32px 0; text-align: center; border: 2px dashed var(--line); border-radius: 4px; }
 .draft-badge { font-family: var(--pixel); font-size: 12px; color: #fff; background: #8a6d1f; padding: 1px 8px; border-radius: 2px; }
 
 /* Article */
