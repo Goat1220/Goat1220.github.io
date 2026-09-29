@@ -2,6 +2,7 @@
 export const CATEGORIES = {
   daily: { name: '일상', description: '개발 밖의 소소한 이야기.' },
   gamedev: { name: '게임 개발', description: '게임을 직접 만들며 기획이 구현을 만나 달라지는 과정을 기록합니다.' },
+  review: { name: '게임 리뷰', description: '직접 해 본 게임을 기획자의 눈으로 돌아봅니다.' },
   study: { name: '코딩 공부', description: '게임을 만들며 배운 프로그래밍과 도구 이야기를 정리합니다.' },
 } as const;
 
