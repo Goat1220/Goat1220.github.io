@@ -1,5 +1,6 @@
 ---
 title: "[DungeonRace 개발일지 #2] 거미 다리 8개를 그리기까지 — AI로 몬스터 스프라이트 만들기"
+urlname: devlog-02
 description: "색 네모였던 몬스터에 고블린, 오우거, 거대 거미 그림을 입혔습니다. AI가 다리를 6개, 10개로 그리고, 참고 자료까지 줬는데 엉뚱한 무기를 들려 주던 하루의 시행착오 기록."
 date: 2026-09-30
 category: gamedev
